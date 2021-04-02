@@ -8,8 +8,6 @@
 
 using namespace std;
 
-//template <typename City>
-
 class TransitionTo;
 
 class City{
@@ -17,12 +15,14 @@ private:
     int numOrdem;
     string nome;
     int valHeuristic;
-    vector<TransitionTo*>* adjacencias;
+    vector<TransitionTo *>* adjacencias;
+
+
 
 public:
 
     City();
-    City( int _numOrdem, string _nome, vector<TransitionTo*>* _adjacencias = nullptr, int _valHeuristic = 0);
+    City( int _numOrdem, string _nome, vector<TransitionTo*> * _adjacencias, int _valHeuristic = 0);
     ~City();
 
     string getNome() const;
@@ -31,11 +31,17 @@ public:
     int getValorHeuristic() const;
     void setValorHeuristic(int _valorHeuristic );
 
-    vector<TransitionTo*>* getadjacentCityes();
-    void setAdjacentCityes( vector<TransitionTo *>* _vectorOfRoads );
+
+    void setAdjacencias(vector<TransitionTo *> * _adjacencias );
+    void addAdjacentCity(  TransitionTo * _transition);
+    //vector<TransitionTo *> getAdjacentCityes();
+    vector<TransitionTo *> getVectorOfAdjacencias();
+
 
 
     int getNumOrdem() const;
     void setNumOrdem(int _numOrdem );
+
+
 };
 #endif // CITY

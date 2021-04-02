@@ -15,13 +15,12 @@ class TransitionTo{
 
 private:
     string origem;
-    //TransitionTo * destino;
     City * destino;
     int distancia;
 
 
 public:
-    TransitionTo( string _nome, City * _destino = nullptr, int _distancia = 0);
+    TransitionTo( string _origem, City * _destino = nullptr, int _distancia = 0 );
     ~TransitionTo();
 
     string getOrigem();

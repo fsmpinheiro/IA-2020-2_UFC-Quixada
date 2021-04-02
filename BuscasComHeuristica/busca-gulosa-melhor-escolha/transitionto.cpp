@@ -1,9 +1,9 @@
 #include "transitionto.h"
 
-TransitionTo::TransitionTo( string _nome, City* _destino , int _distancia)
+TransitionTo::TransitionTo( string _origem, City* _destino , int _distancia)
 {
     if( _destino != nullptr){
-        this->origem = _nome;
+        this->origem = _origem;
         this->destino = _destino;
         this->distancia = _distancia;
     }

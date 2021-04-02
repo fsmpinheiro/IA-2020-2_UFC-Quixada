@@ -22,7 +22,7 @@ void MapOfAStates::addCityeInVector(  City  * &_cidade ){
                                                                 //    std::cout << "tamanho de sizo: " << sizo <<"\n\n";
 }
 
-City * MapOfAStates::getCityByName(std::string _cidade){
+City * MapOfAStates::getCityByName(string _cidade){
     int vectorLength = this->vectorOfCityes.size();
     for ( int i = 0; i < vectorLength; i++){
         if( this->vectorOfCityes[i]->getNome() == _cidade ){
@@ -32,7 +32,7 @@ City * MapOfAStates::getCityByName(std::string _cidade){
         }
     }
                                                                 //cout << _cidade <<" não está na no vetor. \n";
-    City * _nullCity = new City();
+    City * _nullCity = new City(-9999, "nullCity", {} , -9999);
     return _nullCity ;
     _nullCity->~City();
                                                                 //cout << "depois do break\n;";

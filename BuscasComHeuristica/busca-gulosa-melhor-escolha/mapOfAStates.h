@@ -20,8 +20,6 @@ class MapOfAStates{
 
 private:
     vector< City*> vectorOfCityes;
-                                                                    //    vector< City*>* vectorOfRoads;
-
 
 public:
     MapOfAStates();
@@ -30,21 +28,11 @@ public:
     void addCityeInVector(  City * &_cidade );
     vector<City *> getVectorOfCityes();
 
-                                                                    //vector<City*> getVectorOfRoads() const;
-                                                                    //void setVectorOfRoads(const vector<City*> &value);
 
     City * getCityByName( string _cidade );
     int sizeOfVectorOfCyties();
 
-
-                                                                    //    std::vector<City *> getVetorCidades();
-                                                                    //    void vectorAddCitye(City* _cidade);
-
-
-                                                                    //    void setVectorOfCityes(std::vector<City *>* value);
-                                                                    //    City* getCityByName(std::string _cidade);
-                                                                    //    City* getCityeByNumber(int identificador);
-                                                                    //    void setVectorOfCityes(const std::vector<City *> &value);
+    TransitionTo * getAllAdjacents(vector<TransitionTo *> _vectorOfAdjacences );
 
 };
 

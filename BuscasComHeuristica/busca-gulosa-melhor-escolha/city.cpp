@@ -1,16 +1,6 @@
 #include "city.h"
 
-
-City::City()    /*Construtor com valores nulos*/
-{
-    this->numOrdem = -9999;
-    this->nome = "nullCity";
-    this->adjacencias = nullptr;
-    this->valHeuristic = -9999;
-}
-
-City::City(int _numOrdem, string _nome,
-           vector<TransitionTo *> *_adjacencias, int _valorHeuristic)
+City::City(int _numOrdem, string _nome, vector<TransitionTo*>* _adjacencias, int _valorHeuristic)
 {
     this->numOrdem = _numOrdem;
     this->nome = _nome;
@@ -42,6 +32,33 @@ int City::getValorHeuristic() const
 void City::setValorHeuristic(int _valorHeuristic)
 {
     valHeuristic = _valorHeuristic;
+}
+
+
+
+void City::addAdjacentCity(TransitionTo * _transition )
+{
+    if( _transition != nullptr ){
+                        //cout <<"antes da inserção: " <<  this->adjacencias->size() ;
+        this->adjacencias->push_back(_transition);
+                        //cout <<" - depois da inserção: " <<  this->adjacencias->size() <<"\n";
+    }else{
+        cout << "addAdjacentCity recebeu um vetor é nulo...\n";
+    }
+}
+
+void City::setAdjacencias(vector<TransitionTo *> * _vectorOfRoads)
+{
+    this->adjacencias = _vectorOfRoads;
+}
+
+//vector<TransitionTo *> *City::getVectorOfAdjacencias()
+//{
+//    return this->adjacencias;
+//}
+vector<TransitionTo *> City::getVectorOfAdjacencias()
+{
+    return *this->adjacencias;
 }
 
 int City::getNumOrdem() const
